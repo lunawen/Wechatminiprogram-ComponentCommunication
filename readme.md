@@ -6,7 +6,7 @@
 
 [Github repo](https://github.com/lunawen/Wechatminiprogram-ComponentCommunication)
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/hSH-mmP0clw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Demo video](https://youtu.be/hSH-mmP0clw)
 
 它包含了：
 
