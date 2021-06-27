@@ -2,9 +2,14 @@
 
 这个小 demo 是我在学习微信组件之间通信和事件触发机制的阶段性成果。
 
-Source code: 
+**Copyright：未经作者允许，禁止转载。**
+
+[Github repo](https://github.com/lunawen/Wechatminiprogram-ComponentCommunication)
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/hSH-mmP0clw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 它包含了：
+
 1. 一个默认起始页面 index
 2. 一个自定义 parent component
 3. 一个自定义 child component
@@ -48,12 +53,12 @@ Source code:
 
 ---
 
-# 3. 详解
+# 3. 代码详解
 
 ## 我的命名规则
 
 ```html
-    <child messageFromParent='{{messageForChild}}' styleFromParent="{{styleForChild}}" shouldReset="{{shouldReset}}"bind:childEvent="onChildEvent"/>
+<child messageFromParent='{{messageForChild}}' styleFromParent="{{styleForChild}}" shouldReset="{{shouldReset}}"bind:childEvent="onChildEvent"/>
 ```
 
 你们可能已经发现了，和很多教程不同的是，我特地用了 messageFromParent 和 messageForChild 来区分 local property 和 data binding。
@@ -80,7 +85,7 @@ Component({
 ## child 触发 parent 事件
 
 ```html
-    <child messageFromParent='{{messageForChild}}' styleFromParent="{{styleForChild}}" shouldReset="{{shouldReset}}"bind:childEvent="onChildEvent"/>
+<child messageFromParent='{{messageForChild}}' styleFromParent="{{styleForChild}}" shouldReset="{{shouldReset}}"bind:childEvent="onChildEvent"/>
 ```
 
 这里的 `"bind:childEvent="onChildEvent"` 就是核心，childEvent是 child component 的一个 trigger，而`"onChildEvent"`则是 parent component 里面的一个 event handler method。
@@ -125,26 +130,20 @@ methods: {
 index.js 里面，我在 onReset function 中遇到了一个很奇怪的问题，resetButtonStyle 必须和其他的 reset 分开写才有效，目前不是很清楚为什么，如果有人知道的话，烦请告知~
 
 ```js
-  onReset: function(e){
+onReset: function(e){
     this.setData({
-      messageFromParent: "",
-      resetFlag: true
-      // ,resetButtonStyle: "display: none;" // not working
+        messageFromParent: "",
+        resetFlag: true
+        // ,resetButtonStyle: "display: none;" // not working
     });
     // Todo: I have to separate the resetButtonStyle part out, otherwise it's not working.
     // not sure why, if you know the answer, contact me.
     this.setData({
-      resetButtonStyle: "display: none;"
+        resetButtonStyle: "display: none;"
     });
-  }
+}
 ```
 
 ## Limitations
 
 CSS 部分没有做的很仔细。
-
----
-
-# 5. CopyRight
-
-未经作者允许，禁止转载。
