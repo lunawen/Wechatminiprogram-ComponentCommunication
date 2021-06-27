@@ -1,0 +1,12 @@
+<view style="{{pageStyle}}">
+  <view style="color: #F58634">Page View</view>
+  <parentComponent styleFromPage="background: #F58634;" bind:parentEvent="onParentEvent" shouldReset="{{resetFlag}}"></parentComponent>
+  <text style="color: #F58634;">{{messageFromParent}}</text>
+  <button style="{{resetButtonStyle}}" bindtap="onReset">Reset</button>
+</view>
+<div style="color: #FF6701;" class="footer">
+  <text>
+Created By: Luna Wen
+2021.06.27
+  </text>
+</div>

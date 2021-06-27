@@ -1,0 +1,5 @@
+
+<view style="{{styleFromParent}}">
+    Child
+    <button style="{{buttonStyle}}" bindtap="onClick" shouldReset="{{shouldReset}}">{{buttonText}}</button>
+</view>

@@ -1,0 +1,7 @@
+{
+  "desc": "Author: Luna Wen https://lunawen.com",
+  "rules": [{
+  "action": "allow",
+  "page": "*"
+  }]
+}

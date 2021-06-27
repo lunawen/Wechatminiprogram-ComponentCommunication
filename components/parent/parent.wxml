@@ -1,0 +1,5 @@
+<view name="parentComponent" style="{{styleFromPage}}">
+    <text> Parent </text>
+    <child messageFromParent='{{messageForChild}}' styleFromParent="{{styleForChild}}" shouldReset="{{shouldReset}}"bind:childEvent="onChildEvent"/>
+    <text>{{paramFromChild}}</text>
+</view>
